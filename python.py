@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     commit_id = sys.argv[1]
     changed_files = sys.argv[2]
-    pull_number = sys.argv[3]
+    pull_number = os.environ.get('PULL_REQUEST_NUMBER')
 
     owner = "RavindranathShenoy"
     repo = "genAI"
