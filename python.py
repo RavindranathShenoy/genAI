@@ -27,6 +27,8 @@ if __name__ == "__main__":
     changed_files = sys.argv[2]
     pull_number = os.environ.get('PULL_REQUEST_NUMBER')
 
+    print(f"${commit_id}, ${changed_files}, ${pull_number}")
+
     owner = "RavindranathShenoy"
     repo = "genAI"
     token = "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"
