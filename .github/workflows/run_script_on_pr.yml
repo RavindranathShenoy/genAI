@@ -34,7 +34,7 @@ jobs:
         files=$(curl -s -H "Authorization: Bearer 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" \
                      -H "Accept: application/vnd.github.v3+json" \
                      ${{ github.api_url }}/repos/${{ github.repository }}/pulls/${{ github.event.number }}/files \
-                     | jq -r '.[] | .filename')
+                     | jq -r '.[].filename')
         echo "::set-output name=changed_files::${files}"
 
     - name: Run Python script
