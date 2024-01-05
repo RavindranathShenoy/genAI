@@ -35,5 +35,5 @@ jobs:
     - name: Run Python script
       run: python python.py ${{ steps.commit.outputs.commit_id }} ${{ steps.files.outputs.changed_files }} ${{ github.event.number }}
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: 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
         PULL_REQUEST_NUMBER: ${{ github.event.number }}
