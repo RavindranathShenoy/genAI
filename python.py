@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     owner = "RavindranathShenoy"
     repo = "genAI"
-    token = "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"
+    token = "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"
 
     comment_data = {
         "body": "03 dec comment",
