@@ -23,8 +23,8 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python script.py <commit_id> <changed_files> <pull_request_number> updated")
 
-    commit_id = sys.argv[1]
-    changed_files = sys.argv[2]
+    commit_id = sys.argv[0]
+    changed_files = sys.argv[1]
     pull_number = os.environ.get('PULL_REQUEST_NUMBER')
 
     print(f"commitId ${commit_id}, files ${changed_files}, pr num ${pull_number}")
