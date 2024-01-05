@@ -20,7 +20,7 @@ def post_comment_on_pull_request(owner, repo, pull_number, token, comment_data):
         print(response.text)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 5:
+    if len(sys.argv) < 4:
         print("Usage: python script.py <commit_id> <changed_files> <pull_request_number>")
         sys.exit(1)
 
