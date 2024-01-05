@@ -1,0 +1,32 @@
+name: Run Python Script on PR Creation
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Get commit ID
+      id: commit
+      run: echo "::set-output name=commit_id::${{ github.sha }}"
+
+    - name: Get changed files
+      id: files
+      run: echo "::set-output name=changed_files::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})"
+
+    - name: Run Python script
+      run: python python4.py ${{ steps.commit.outputs.commit_id }} ${{ steps.files.outputs.changed_files }} ${{ github.event.number }}
+      env:
+        GITHUB_TOKEN: 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
