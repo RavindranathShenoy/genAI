@@ -31,11 +31,12 @@ jobs:
     - name: Get changed files
       id: files
       run: |
-        files=$(curl -s -H "Authorization: Bearer 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" \
-                     -H "Accept: application/vnd.github.v3+json" \
-                     ${{ github.api_url }}/repos/${{ github.repository }}/pulls/${{ github.event.number }}/files \
-                     | jq -r '.[].filename')
-        echo "::set-output name=changed_files::${files}"
+            response=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+               -H "Accept: application/vnd.github.v3+json" \
+               ${{ github.api_url }}/repos/${{ github.repository }}/pulls/${{ github.event.number }}/files)
+            echo "API response: $response"
+            files=$(echo "$response" | jq -r '.[].filename')
+            echo "::set-output name=changed_files::${files}"
 
     - name: Run Python script
       run: python python.py ${{ steps.commit.outputs.commit_id }} ${{ steps.files.outputs.changed_files }} ${{ github.event.number }}
