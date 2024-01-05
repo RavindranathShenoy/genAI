@@ -27,7 +27,7 @@ if __name__ == "__main__":
     changed_files = sys.argv[2]
     pull_number = os.environ.get('PULL_REQUEST_NUMBER')
 
-    print(f"${commit_id}, ${changed_files}, ${pull_number}")
+    print(f"commitId ${commit_id}, files ${changed_files}, pr num ${pull_number}")
 
     owner = "RavindranathShenoy"
     repo = "genAI"
