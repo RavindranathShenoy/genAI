@@ -27,6 +27,6 @@ jobs:
       run: echo "::set-output name=changed_files::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})"
 
     - name: Run Python script
-      run: python python4.py ${{ steps.commit.outputs.commit_id }} ${{ steps.files.outputs.changed_files }} ${{ github.event.number }}
+      run: python python.py ${{ steps.commit.outputs.commit_id }} ${{ steps.files.outputs.changed_files }} ${{ github.event.number }}
       env:
         GITHUB_TOKEN: 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

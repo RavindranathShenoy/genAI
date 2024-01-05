@@ -29,7 +29,7 @@ if __name__ == "__main__":
     pull_number = sys.argv[3]
 
     owner = "RavindranathShenoy"
-    repo = "reviewComment"
+    repo = "genAI"
     token = "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"
 
     comment_data = {
