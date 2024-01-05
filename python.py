@@ -36,7 +36,7 @@ if __name__ == "__main__":
     comment_data = {
         "body": "03 dec comment",
         "commit_id": commit_id,
-        "path": changed_files.splitlines()[0] if changed_files else None,
+        "path": "main.py",
         "position": 1
     }
 
