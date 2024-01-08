@@ -38,5 +38,5 @@ if __name__ == "__main__":
         "path": changed_files.splitlines()[0] if changed_files else None,
         "position": 1
     }
-
+    print('hello')
     post_comment_on_pull_request(owner, repo, pull_number, token, comment_data)
