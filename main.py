@@ -40,4 +40,5 @@ if __name__ == "__main__":
     }
     print('hello')
     print('hello')
+    print('hello2')
     post_comment_on_pull_request(owner, repo, pull_number, token, comment_data)
