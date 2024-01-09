@@ -15,9 +15,11 @@ def post_comment_on_pull_request(owner, repo, pull_number, token, comment_data):
 
     if response.status_code == 201:
         print("Comment posted successfully.")
+        print("Latest comment added")
     else:
         print(f"Failed to post comment. Status code: {response.status_code}")
         print(response.text)
+        
 
 if __name__ == "__main__":
     # if len(sys.argv) < 3:
